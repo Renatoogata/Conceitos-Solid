@@ -8,7 +8,7 @@ import { turnUserAdminController } from "../modules/users/useCases/turnUserAdmin
 
 const usersRoutes = Router();
 
-usersRoutes.post("/", verifyExistingEmail, (request, response) =>
+usersRoutes.post("/", (request, response) =>
   createUserController.handle(request, response)
 );
 
@@ -20,7 +20,7 @@ usersRoutes.get("/:user_id", (request, response) =>
   showUserProfileController.handle(request, response)
 );
 
-usersRoutes.get("/:user_id", (request, response) =>
+usersRoutes.get("/", (request, response) =>
   listAllUsersController.handle(request, response)
 );
 

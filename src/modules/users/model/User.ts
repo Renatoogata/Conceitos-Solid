@@ -13,6 +13,15 @@ class User {
     if (!this.id) {
       this.id = uuidV4();
     }
+    if (this.admin === null) {
+      this.admin = false;
+    }
+    if (!this.created_at) {
+      this.created_at = new Date();
+    }
+    if (!this.updated_at) {
+      this.updated_at = new Date();
+    }
   }
 }
 
